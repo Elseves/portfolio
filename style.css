@@ -390,9 +390,18 @@ margin-bottom: 0px;
   }
  
   .footer-col a {
-    text-decoration: underline;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .footer-col a:hover {
+    opacity: 0.5;
   }
  
+  .footer-col a.link-underline {
+    text-decoration: underline;
+  }
+
   .footer-col--education   { grid-area: education; }
   .footer-col--skills      { grid-area: skills; }
   .footer-col--contacts    { grid-area: contacts; }
