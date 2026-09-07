@@ -42,7 +42,7 @@ max-width: 1200px;
 margin-bottom: 0%;
 }
 
-
+ /* ===== Header / nav ===== */
 .header {
 padding: 15px 15px;
 }
@@ -75,8 +75,7 @@ padding: 15px 15px;
     color: #000000;
 }
 
- /* ===== Welcome section ===== */
-
+/* ===== Welcome section ===== */
 .main {
 
 }
