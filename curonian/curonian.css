@@ -181,15 +181,12 @@ a:hover {
   .photo-row img {
   height: 100%;
   object-fit: cover;
-  margin-bottom: 70px;
-
  }
  
   .photo-row--3 {
     grid-template-columns: 1fr 1fr 1fr;
     display: grid;
     height: 286px;
-    align-items: top;
     gap: 13px;
     flex-shrink: 0;
     align-self: stretch;
@@ -222,7 +219,7 @@ a:hover {
     grid-template-columns: 1fr 673px;
     gap: var(--photo-gap);
     align-items: stretch;
-    margin: 0px 0px;
+    margin: 0 0 var(--photo-gap);
   }
  
   .booklet-text {
