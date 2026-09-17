@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* 
+Regular 400
+Medium 500
+SemiBold 600
+Bold 700
+
+*/
+
+  * {
+    box-sizing: border-box;
+  }
+ 
+  :root {
+    --photo-gap: 13px;
+  }
+
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    color: black;
+    font-weight: 350;
+    font-size: 26px;
+    line-height: 100%;
+    /* or 42px */
+    letter-spacing: 0px;
+    background-color: white;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+a:hover {
+    opacity: 0.5;
+}
+
+.container {
+
+    margin: 0 auto 100px;
+    padding: 15px;
+    padding-left: 0px;
+    max-width: 1200px;
+    margin-bottom: 30px;
+}
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+ 
+  a {
+    color: inherit;
+  }
+ 
+  /* ===== Page container: max-width 1200px, centered ===== */
+ 
+  .page {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+ 
+  /* ===== Header ===== */
+ 
+  .site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 32px 15px 40px;
+    font-size: 16px;
+  }
+ 
+  .site-header__name {
+    color: #000000;
+    text-decoration: none;
+  }
+ 
+  .site-header__nav a {
+    color: #000000;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+ 
+  .site-header__nav a:hover {
+    opacity: 0.6;
+  }
+ 
+  /* ===== Intro block ===== */
+ 
+  .intro {
+    padding: 0 0px;
+    margin-bottom: 40px;
+  }
+ 
+  .project-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 60px;
+    font-weight: 850;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    margin: 0 0 24px;
+  }
+ 
+  .project-task {
+    font-size: 26px;
+    font-weight: 350;
+    letter-spacing: -1px;
+    line-height: 1.4;
+    max-width: 760px;
+    margin: 0 0 40px;
+  }
+ 
+  .intro-meta {
+    display: flex;
+    gap: 80px;
+
+  }
+ 
+  .intro-meta__block {
+    font-size: 26px;
+    font-weight: 350;
+    letter-spacing: -1px;
+    line-height: 1.4;
+
+  }
+ 
+  .intro-meta__value {
+    min-height: 1.4em; /* reserves space for the Role text to come */
+  }
+ 
+  /* ===== Photos: full-width image blocks, 13px gap everywhere ===== */
+ 
+  .media-block {
+    margin-bottom: var(--photo-gap);
+  }
+
+.media-block_01 {
+  display: grid;
+  grid-template-columns: 640px 1fr;
+  gap: 13px;
+  height: 427px;
+  /* object-fit и align-items здесь не нужны — убрать */
+}
+
+.media-block_01 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.media-block_02 {
+  gap: 13px;
+  height: 100%
+}
+
+.video3 {
+  align-items: center;
+}
+
+  .photo-row {
+    display: grid;
+    grid-template-columns: 1fr 750px;
+    gap: var(--photo-gap);
+    margin-bottom: var(--photo-gap);
+  }
+
+  .photo-row__01 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--photo-gap);
+    margin-bottom: var(--photo-gap);
+    height: 286px;
+
+  }
+
+  .photo-row img {
+  height: 100%;
+  object-fit: cover;
+  margin-bottom: 70px;
+
+ }
+ 
+  .photo-row--3 {
+    grid-template-columns: 1fr 1fr 1fr;
+    display: grid;
+    height: 286px;
+    align-items: top;
+    gap: 13px;
+    flex-shrink: 0;
+    align-self: stretch;
+  }
+ 
+  /* Collage image: natural size, left-aligned on desktop */
+  .media-block--natural {
+    display: flex;
+    justify-content: flex-start;
+  }
+ 
+  .media-block--natural img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+  }
+ 
+  /* ===== Mid-page caption text blocks ===== */
+ 
+  .mid-text {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 80px 150px;
+  }
+ 
+  /* ===== gif/booklet text ===== */
+ 
+  .split-block {
+    display: grid;
+    grid-template-columns: 1fr 673px;
+    gap: var(--photo-gap);
+    align-items: stretch;
+    margin: 0px 0px;
+  }
+ 
+  .booklet-text {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 80px 150px;
+  
+  }
+ 
+  .split-block__photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+ 
+  /* ===== Footer ===== */
+ 
+  .site-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 40px 15px 60px;
+    font-size: 16px;
+  }
+ 
+  .site-footer a {
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+ 
+  .site-footer a:hover {
+    opacity: 0.6;
+  }
+ 
+  /* ===== Fixed scroll-to-top button ===== */
+ 
+  .scroll-top {
+    position: fixed;
+    left: 24px;
+    bottom: 24px;
+    width: 80px;
+    height: auto;
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    z-index: 100;
+  }
+ 
+  .scroll-top img {
+    width: 100%;
+    height: auto;
+  }
+ 
+  /* ===== Mobile + tablet ===== */
+  @media (max-width: 900px) {
+    .page {
+      padding: 0 15px;
+    }
+ 
+    .site-header {
+      padding-left: 0;
+      padding-right: 0;
+    }
+ 
+    .intro {
+      padding: 0;
+    }
+ 
+    .project-title {
+      font-size: 34px;
+    }
+ 
+    .project-task {
+      font-size: 18px;
+      max-width: none;
+    }
+ 
+    .intro-meta {
+      flex-direction: column;
+      gap: 12px;
+    }
+ 
+    .intro-meta__block {
+      font-size: 18px;
+    }
+ 
+    /* everything centered on mobile/tablet */
+    .intro,
+    .mid-text,
+    .split-block {
+      text-align: left;
+    }
+ 
+    .mid-text, .booklet-text,
+    .split-block {
+      margin: 0px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+ 
+    .photo-row,
+    .photo-row--3,
+    .split-block {
+      grid-template-columns: 1fr;
+    }
+ 
+    .split-block__text {
+      order: 1;
+    }
+ 
+    .split-block__photo {
+      order: 2;
+    }
+ 
+    /* collage image centered instead of left-aligned */
+    .media-block--natural {
+      justify-content: center;
+    }
+ 
+    .site-footer {
+      padding-left: 0;
+      padding-right: 0;
+      justify-content: center;
+    }
+ 
+    .scroll-top {
+      width: 56px;
+      left: 16px;
+      bottom: 16px;
+    }
+  }
