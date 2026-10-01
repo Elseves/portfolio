@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tripster identity</title>
+    <link rel="stylesheet" href="./tripster.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="../Main page/index.html" class="logo">
+           Anastasia Eliseeva
+           </a>
+        </div>
+    </header>
+    
+  <div class="page">
+ 
+    <div class="intro">
+      <h1 class="project-title">Tripster identity</h1>
+      <p class="project-task">Here is an overview of the projects I worked on as a communication designer for the travel-tech brand Tripster: social media design, presentations, marketing team assets, email newsletters, travel guides, logo and identity design</p>
+    </div>
+
+    <div class="case-stack">
+      <img src="./img_tripster/tripster_case_01.jpg" alt="">
+      <img src="./img_tripster/tripster_case_02.jpg" alt="">
+      <img src="./img_tripster/tripster_case_03.jpg" alt="">
+      <img src="./img_tripster/tripster_case_04.jpg" alt="">
+      <img src="./img_tripster/tripster_case_05.jpg" alt="">
+      <img src="./img_tripster/tripster_case_06.jpg" alt="">
+      <img src="./img_tripster/tripster_case_07.jpg" alt="">
+      <img src="./img_tripster/tripster_case_08.jpg" alt="">
+      <img src="./img_tripster/tripster_case_09.jpg" alt="">
+      <img src="./img_tripster/tripster_case_10.jpg" alt="">
+      <img src="./img_tripster/tripster_case_11.jpg" alt="">
+      <img src="./img_tripster/tripster_case_12.jpg" alt="">
+      <img src="./img_tripster/tripster_case_13.jpg" alt="">
+      <img src="./img_tripster/tripster_case_14.jpg" alt="">
+      <img src="./img_tripster/tripster_case_15.jpg" alt="">
+      <img src="./img_tripster/tripster_case_16.jpg" alt="">
+      <img src="./img_tripster/tripster_case_17.jpg" alt="">
+      <img src="./img_tripster/tripster_case_18.jpg" alt="">
+      <img src="./img_tripster/tripster_case_19.jpg" alt="">
+      <img src="./img_tripster/tripster_case_20.jpg" alt="">
+      <img src="./img_tripster/tripster_case_21.jpg" alt="">
+      <img src="./img_tripster/tripster_case_22.jpg" alt="">
+      <img src="./img_tripster/tripster_case_23.jpg" alt="">
+      <img src="./img_tripster/tripster_case_24.jpg" alt="">
+      <img src="./img_tripster/tripster_case_25.jpg" alt="">
+      <img src="./img_tripster/tripster_case_26.jpg" alt="">
+      <img src="./img_tripster/tripster_case_27.jpg" alt="">
+      <img src="./img_tripster/tripster_case_28.jpg" alt="">
+      <img src="./img_tripster/tripster_case_29.jpg" alt="">
+      <img src="./img_tripster/tripster_case_30.jpg" alt="">
+      <video src="./img_tripster/museums_guide_video.mp4" muted loop playsinline controls></video>
+      <img src="./img_tripster/tripster_case_31.jpg" alt="">
+      <img src="./img_tripster/tripster_case_32.jpg" alt="">
+      <img src="./img_tripster/tripster_case_33.jpg" alt="">
+      <video src="./img_tripster/Kalina_guide_video.mp4" muted loop playsinline controls></video>
+      <img src="./img_tripster/tripster_case_34.jpg" alt="">
+      <img src="./img_tripster/tripster_case_35.jpg" alt="">
+      <img src="./img_tripster/tripster_case_36.jpg" alt="">
+      <img src="./img_tripster/tripster_case_37.jpg" alt="">
+      <img src="./img_tripster/tripster_case_38.jpg" alt="">
+    </div>
+
+    <footer class="site-footer">
+      <button type="button" class="site-footer__link" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">to the top</button>
+      <a class="site-footer__link" href="../Main page/index.html">back to works</a>
+    </footer>
+ 
+  </div>
+
+  <script>
+    document.querySelectorAll('.case-stack video').forEach(function (video) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            video.play().catch(function () {});
+          } else {
+            video.pause();
+          }
+        });
+      }, { threshold: 0.35 });
+      observer.observe(video);
+    });
+  </script>
+ 
+</body>
+</html>
