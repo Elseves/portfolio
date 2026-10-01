@@ -406,6 +406,7 @@ video {
   }
 
   .photo-grid-23 {
+    width: 100%;
     gap: 10px;
     margin-bottom: 10px;
   }

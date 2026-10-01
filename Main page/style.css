@@ -147,6 +147,57 @@ margin-top: 0px;
 margin-bottom: 15px;
 }
 
+@media (max-width: 900px) {
+  .header .container {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .logo {
+    max-width: 140px;
+    flex-shrink: 0;
+  }
+
+  .header__nav {
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .header__link {
+    font-size: 25px;
+  }
+
+  .welcome .welcome__desc {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+    max-width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  .welcome__img {
+    display: block;
+    width: 100%;
+    height: 208px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .welcome_title {
+    width: 100%;
+    font-size: 57px;
+    font-weight: 850;
+    line-height: 0.86;
+    letter-spacing: -0.55px;
+  }
+
+  .experience_text {
+    max-width: 100%;
+  }
+}
+
 
 .workscards {
   overflow: visible;
@@ -181,8 +232,16 @@ overflow: visible;
   transition: opacity 0.3s ease;
 }
 
+.work__card--soon {
+  cursor: pointer;
+}
+
 .work__card--soon:hover .soon-sticker,
-.work__card--soon:focus-within .soon-sticker {
+.work__card--soon:focus-within .soon-sticker,
+.work__card--soon.is-soon .soon-sticker,
+.work__card--soon:hover img.soon-sticker,
+.work__card--soon:focus-within img.soon-sticker,
+.work__card--soon.is-soon img.soon-sticker {
   opacity: 1;
 }
 
@@ -203,6 +262,43 @@ line-height: 100%;
 /* or 55px */
 letter-spacing: 0px;
 font-weight: 350;
+}
+
+@media (max-width: 900px) {
+  .workscards .container {
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 50px;
+  }
+
+  .work__card {
+    width: 100%;
+  }
+
+  .workcard__img {
+    width: 100%;
+    height: 227px;
+  }
+
+  .works__title {
+    width: 100%;
+  }
+
+  .work__card--soon .soon-sticker,
+  .work__card--soon img.soon-sticker {
+    width: 100%;
+    max-width: 100%;
+    left: 50%;
+    top: auto;
+    bottom: 0;
+    transform: translate(-50%, 50%);
+  }
+
+  .work__card--soon.is-soon img.soon-sticker,
+  .work__card--soon:hover img.soon-sticker,
+  .work__card--soon:focus-within img.soon-sticker {
+    opacity: 1;
+  }
 }
 
  /* ===== Project list Selected works ===== */

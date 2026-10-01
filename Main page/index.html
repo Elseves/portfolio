@@ -50,7 +50,7 @@
         <h2 class="works__title">Early Music Festival</h2>
       </a>
     </div>
-    <div class="work__card work__card--soon">
+    <div class="work__card work__card--soon" role="button" tabindex="0" aria-label="Local history fest New Holland, coming soon">
         <img src="./images/local history.jpeg" alt="localhistory" class="workcard__img">
         <h2 class="works__title">Local history fest New Holland</h2>
         <img src="./images/soon_01.png" alt="" class="soon-sticker">
@@ -242,6 +242,31 @@ Dieline Participant 2021</p>
    </div>
 
 </footer>
+
+<script>
+  (function () {
+    var card = document.querySelector('.work__card--soon');
+    if (!card) return;
+
+    card.addEventListener('click', function (e) {
+      e.stopPropagation();
+      card.classList.toggle('is-soon');
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!card.contains(e.target)) {
+        card.classList.remove('is-soon');
+      }
+    });
+
+    card.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        card.classList.toggle('is-soon');
+      }
+    });
+  })();
+</script>
 
 </body>
 
