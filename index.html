@@ -17,7 +17,7 @@
             <nav class="header__nav">
                 <a href="#about" class="header__link header__link__black">About me</a>
                 <a href="https://t.me/Frutalina" target="_blank" class="header__link">Telegram</a>
-                <a href="https://www.behance.net/apashkina" target="_blank" class="header__link">Behance</a>
+                <a href="https://www.behance.net/apashkina" target="_blank" class="header__link header__link--desktop">Behance</a>
             </nav>
         </div>
     </header>
@@ -246,24 +246,36 @@ Dieline Participant 2021</p>
 <script>
   (function () {
     var card = document.querySelector('.work__card--soon');
+    var mobile = window.matchMedia('(max-width: 900px)');
     if (!card) return;
 
+    function isMobile() {
+      return mobile.matches;
+    }
+
     card.addEventListener('click', function (e) {
+      if (!isMobile()) return;
       e.stopPropagation();
       card.classList.toggle('is-soon');
     });
 
     document.addEventListener('click', function (e) {
+      if (!isMobile()) return;
       if (!card.contains(e.target)) {
         card.classList.remove('is-soon');
       }
     });
 
     card.addEventListener('keydown', function (e) {
+      if (!isMobile()) return;
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
         card.classList.toggle('is-soon');
       }
+    });
+
+    mobile.addEventListener('change', function () {
+      if (!isMobile()) card.classList.remove('is-soon');
     });
   })();
 </script>

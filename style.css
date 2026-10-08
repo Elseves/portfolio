@@ -148,6 +148,10 @@ margin-bottom: 15px;
 }
 
 @media (max-width: 900px) {
+  body {
+    overflow-x: clip;
+  }
+
   .header .container {
     align-items: flex-start;
     gap: 12px;
@@ -166,6 +170,10 @@ margin-bottom: 15px;
 
   .header__link {
     font-size: 25px;
+  }
+
+  .header__link--desktop {
+    display: none;
   }
 
   .welcome .welcome__desc {
@@ -254,7 +262,7 @@ object-position: center;
 }
 
 .works__title {
-margin-top: 12px;
+margin-top: 8px;
 width: 378px;
 margin-bottom: 40px;
 font-size: 26px;
@@ -286,18 +294,31 @@ font-weight: 350;
 
   .work__card--soon .soon-sticker,
   .work__card--soon img.soon-sticker {
-    width: 100%;
-    max-width: 100%;
-    left: 50%;
-    top: auto;
-    bottom: 0;
-    transform: translate(-50%, 50%);
+    width: 350px;
+    max-width: none;
+    height: auto;
+    left: auto;
+    right: 0;
+    top: 150px;
+    bottom: auto;
+    transform: none;
   }
 
-  .work__card--soon.is-soon img.soon-sticker,
+  .work__card--soon:hover .soon-sticker,
+  .work__card--soon:focus-within .soon-sticker,
   .work__card--soon:hover img.soon-sticker,
   .work__card--soon:focus-within img.soon-sticker {
+    opacity: 0;
+  }
+
+  .work__card--soon.is-soon {
+    z-index: 2;
+  }
+
+  .work__card--soon.is-soon .soon-sticker,
+  .work__card--soon.is-soon img.soon-sticker {
     opacity: 1;
+    pointer-events: auto;
   }
 }
 
@@ -333,6 +354,7 @@ font-size: 26px;
 
 
 .project-list-wrap {
+    box-sizing: border-box;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
@@ -340,6 +362,7 @@ font-size: 26px;
   }
 
  .project-list {
+    min-width: 0;
     border-top: 1px solid #000000;
   }
  
@@ -348,6 +371,7 @@ font-size: 26px;
     grid-template-columns: 316px 35px 250px auto;
     align-items: center;
     gap: 30px;
+    min-width: 0;
     padding: 15px 0px;
     text-decoration: none;
     color: #000000;
@@ -361,6 +385,7 @@ font-size: 26px;
   }
  
   .project-name {
+    min-width: 0;
     text-align: left;
     white-space: nowrap;
     overflow: hidden;
@@ -368,6 +393,7 @@ font-size: 26px;
   }
  
   .project-year {
+    min-width: 0;
     text-align: left;
     white-space: nowrap;
     overflow: hidden;
@@ -375,6 +401,7 @@ font-size: 26px;
   }
  
   .project-tags {
+    min-width: 0;
     text-align: left;
     white-space: nowrap;
     overflow: hidden;
@@ -382,11 +409,11 @@ font-size: 26px;
   }
  
   .project-source {
+    min-width: 0;
     text-align: right;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    justify-self: end;
   }
 
   /* Tablet */
@@ -473,6 +500,7 @@ margin-bottom: 0px;
  /* ===== Footer ===== */
  
   .site-footer {
+    box-sizing: border-box;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
@@ -565,11 +593,11 @@ margin-bottom: 0px;
     }
  
     .footer-col {
-      font-size: 13px;
+      font-size: 15px;
     }
  
     .footer-col h4 {
-      font-size: 13px;
+      font-size: 15px;
     }
  
     .footer-col p {
@@ -581,7 +609,10 @@ margin-bottom: 0px;
     }
  
     .footer-col--image img {
+      display: block;
       width: 100%;
       max-width: 320px;
+      margin-left: auto;
+      margin-right: auto;
     }
   }

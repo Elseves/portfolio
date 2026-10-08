@@ -300,6 +300,7 @@ video {
   .project-task {
     font-size: 18px;
     max-width: none;
+    margin-bottom: 25px;
   }
 
   .intro-meta {

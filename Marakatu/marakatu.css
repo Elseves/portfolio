@@ -243,6 +243,7 @@ video {
   .project-task {
     font-size: 18px;
     max-width: none;
+    margin-bottom: 25px;
   }
 
   .intro-meta {
@@ -289,7 +290,15 @@ video {
   }
 
   .mosaic-row--bottom {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 3.2fr);
+    grid-template-columns: 1fr;
+  }
+
+  .mosaic-row--bottom .mosaic-row__stack {
+    display: contents;
+  }
+
+  .mosaic-row--bottom .mosaic-row__stack img:first-child {
+    display: none;
   }
 
   .site-footer {

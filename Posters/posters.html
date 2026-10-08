@@ -70,10 +70,18 @@
         <img src="./img_posters/zamusch.webp" alt="Getting married is life-threatening poster">
       </div>
 
-      <div class="poster-row">
+      <div class="poster-row poster-row--embed">
         <img src="./img_posters/19june_Mader_nort_black.jpg" alt="Mader Nort black poster">
         <img src="./img_posters/19june_Mader_nort_red.jpg" alt="Mader Nort red poster">
-        <video src="./img_posters/Final_video_poster_vospominania_9х16_2,5speed.mov" controls playsinline></video>
+        <div class="poster-embed">
+          <div class="poster-embed__frame">
+            <iframe id="poster-vospominania-player" allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <button type="button" class="poster-embed__volume" aria-label="Mute" aria-pressed="false">
+            <svg class="icon-on" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 9v6h4l5 4V5L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4.03v8.05A4.5 4.5 0 0 0 16.5 12zM14 3.23v2.06a7 7 0 0 1 0 13.42v2.06a9 9 0 0 0 0-17.54z"/></svg>
+            <svg class="icon-muted" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 9v6h4l5 4V5L7 9H3zm13.6 2.2 2.2-2.2 1.4 1.4-2.2 2.2 2.2 2.2-1.4 1.4-2.2-2.2-2.2 2.2-1.4-1.4 2.2-2.2-2.2-2.2 1.4-1.4 2.2 2.2z"/></svg>
+          </button>
+        </div>
       </div>
 
       <div class="poster-row">
@@ -95,6 +103,48 @@
     </footer>
  
   </div>
+
+  <script>
+    function onKinescopeIframeAPIReady(playerFactory) {
+      var volumeButton = document.querySelector('.poster-embed__volume');
+
+      playerFactory.create('poster-vospominania-player', {
+        url: 'https://kinescope.io/aeoKjpy8orbrF2meayNdmj',
+        size: { width: '100%', height: '100%' },
+        behavior: {
+          autoPlay: 'viewable',
+          playback: 'visible',
+          playsInline: true
+        }
+      }).then(function (player) {
+        player.setVolume(1);
+        player.unmute();
+
+        function paint(muted) {
+          volumeButton.classList.toggle('is-muted', muted);
+          volumeButton.setAttribute('aria-pressed', muted ? 'true' : 'false');
+          volumeButton.setAttribute('aria-label', muted ? 'Unmute' : 'Mute');
+        }
+
+        volumeButton.addEventListener('click', function () {
+          player.isMuted().then(function (muted) {
+            if (muted) {
+              player.unmute();
+              player.setVolume(1);
+              paint(false);
+            } else {
+              player.mute();
+              paint(true);
+            }
+          });
+        });
+      });
+    }
+
+    var kinescopeScript = document.createElement('script');
+    kinescopeScript.src = 'https://player.kinescope.io/latest/iframe.player.js';
+    document.head.appendChild(kinescopeScript);
+  </script>
  
 </body>
 </html>
