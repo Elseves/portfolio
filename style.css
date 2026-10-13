@@ -117,6 +117,9 @@ object-position: center;
     font-weight: 850;
     line-height: 91%;
     width: 1000px;
+    hyphens: manual;
+    -webkit-hyphens: manual;
+    hyphenate-character: "\2010";
 
     /* or 82px */
     color: #000000;
@@ -195,6 +198,7 @@ margin-bottom: 15px;
 
   .welcome_title {
     width: 100%;
+    min-width: 0;
     font-size: 57px;
     font-weight: 850;
     line-height: 0.86;
